@@ -5,6 +5,7 @@ from random import randrange
 # print('Mon choix est = ', nb_ordi)
 
 def is_valid(nb, floor, ceiling):
+    
     return isinstance(nb, int) and floor <= nb <= ceiling
 
 #level 1 => diff 0 => 0 à 10
