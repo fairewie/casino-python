@@ -26,20 +26,21 @@ def playing(lvl : int) :
     ceiling : int = 10 + lvl * 10
     temps: int = 10
     nb_coup : int = 0
-    randomChoice = randrange(floor, ceiling, 1)
+    randomChoice : int = randrange(floor, ceiling, 1)
     while True :
-        nb_user : str = ''
+        inputUser : str = ''
         inputValid : bool = False
         while (not inputValid) :
-            nb_user = input("Entrez un nombre entre 1 et " + str(ceiling) + " :")
-            if is_valid_int(nb_user) and is_valid(int(nb_user), floor, ceiling) :
+            inputUser = input("Entrez un nombre entre 1 et " + str(ceiling) + " :")
+            if is_valid_int(inputUser) and is_valid(int(inputUser), floor, ceiling) :
                 inputValid = True
             else :
                 print("Erreur de saisie")
+        guess_user : int = int(inputUser)
         nb_coup += 1
-        if nb_user > randomChoice :
+        if int(guess_user) > randomChoice :
             print ('Votre nbre est trop grand')
-        elif nb_user < randomChoice :
+        elif guess_user < randomChoice :
             print ('Votre nbre est trop petit')
         else :
             print ("Bingo ! Vous avez gagné en {} coup(s) !".format(nb_coup))
