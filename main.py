@@ -1,5 +1,3 @@
-from inspect import _void
-from pickle import NONE
 from random import randrange
 # nb_ordi =  randrange (1, 11, 1)
 # if is_valid(nb_ordi, 1, 10) :
@@ -23,18 +21,18 @@ def initInput() :
 
 # APRES
 def playing(lvl : int) : 
-    nb_essai = 3 + lvl * 2
-    floor = 0
-    ceiling = 10 + lvl * 10
-    temps = 10
-    nb_coup = 0
+    nb_essai : int = 3 + lvl * 2
+    floor : int = 0
+    ceiling : int = 10 + lvl * 10
+    temps: int = 10
+    nb_coup : int = 0
     randomChoice = randrange(floor, ceiling, 1)
     while True :
-        nb_user = -1
-        inputValid = False
+        nb_user : int = -1
+        inputValid : bool = False
         while (not inputValid) :
             nb_user = int(input("Entrez un nombre entre 1 et " + str(ceiling) + " :"))
-            if is_valid(nb_user, floor, ceiling) :
+            if is_valid_int(nb_user) and is_valid(nb_user, floor, ceiling) :
                 inputValid = True
             else :
                 print("Erreur de saisie")
