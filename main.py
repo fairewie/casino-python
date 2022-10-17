@@ -26,8 +26,8 @@ def playing(lvl) :
     while True :
         nb_user = -1
         inputValid = False
-        while (inputValid) :
-            nb_user = input("Entrez un nombre entre 1 et " + str(ceiling) + " :")
+        while (not inputValid) :
+            nb_user = int(input("Entrez un nombre entre 1 et " + str(ceiling) + " :"))
             if is_valid(nb_user, floor, ceiling) :
                 inputValid = True
             else :
