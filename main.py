@@ -1,12 +1,17 @@
+from inspect import _void
+from pickle import NONE
 from random import randrange
 # nb_ordi =  randrange (1, 11, 1)
 # if is_valid(nb_ordi, 1, 10) :
     
 # print('Mon choix est = ', nb_ordi)
 
-def is_valid(nb, floor, ceiling):
-    
-    return isinstance(nb, int) and floor <= nb <= ceiling
+def is_valid_int(value : str) :
+    allowed_characters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+    return all([char in allowed_characters for char in str(value)])
+
+def is_valid(nb : int, floor : int, ceiling : int):
+    return floor <= nb <= ceiling 
 
 #level 1 => diff 0 => 0 à 10
 #level 2 => diff 1 => 0 à 20
@@ -17,7 +22,7 @@ def initInput() :
     #TODO Traitemenet du nom
 
 # APRES
-def playing(lvl) : 
+def playing(lvl : int) : 
     nb_essai = 3 + lvl * 2
     floor = 0
     ceiling = 10 + lvl * 10
