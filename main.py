@@ -28,7 +28,7 @@ def playing(lvl : int) :
     nb_coup : int = 0
     randomChoice = randrange(floor, ceiling, 1)
     while True :
-        nb_user : int = -1
+        nb_user : str = ''
         inputValid : bool = False
         while (not inputValid) :
             nb_user = input("Entrez un nombre entre 1 et " + str(ceiling) + " :")
