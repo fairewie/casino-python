@@ -31,8 +31,8 @@ def playing(lvl : int) :
         nb_user : int = -1
         inputValid : bool = False
         while (not inputValid) :
-            nb_user = int(input("Entrez un nombre entre 1 et " + str(ceiling) + " :"))
-            if is_valid_int(nb_user) and is_valid(nb_user, floor, ceiling) :
+            nb_user = input("Entrez un nombre entre 1 et " + str(ceiling) + " :")
+            if is_valid_int(nb_user) and is_valid(int(nb_user), floor, ceiling) :
                 inputValid = True
             else :
                 print("Erreur de saisie")
